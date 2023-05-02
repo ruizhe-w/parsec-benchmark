@@ -1,3 +1,6 @@
+This directory now uses OpenSSL v1.1.1 stable.
+- Ruizhe Wang
+
 This directory contains the subset of the OpenSSL library that implements the
 SHA1 functionality used by dedup.
 

@@ -75,6 +75,7 @@ create_log="TRUE"
 
 # Output prefix to use
 oprefix="[PARSEC]"
+export CXXFLAGS="$CXXFLAGS -Xclang -no-opaque-pointers"
 
 
 
@@ -986,9 +987,9 @@ function build_package {
     local build_conf_pkg="${build_conf} ${build_conf_global}"
     # Current pwd is $pkgobjdir
     if [ "${pkgobjdir}" == "${pkgbuildsrcdir}" ]; then
-      local configcmd="env ${build_env} ./configure ${build_conf_pkg}"
+      local configcmd="env LLVM_COMPILER=clang LLVM_COMPILER_PATH=/data/ruizhe/llvm15/build/bin/ CC=wllvm CXX=wllvm++ ${build_env} ./configure ${build_conf_pkg}"
     else
-      local configcmd="env ${build_env} ${pkgbuildsrcdir}/configure ${build_conf_pkg}"
+      local configcmd="env LLVM_COMPILER=clang LLVM_COMPILER_PATH=/data/ruizhe/llvm15/build/bin/ CC=wllvm CXX=wllvm++ ${build_env} ${pkgbuildsrcdir}/configure ${build_conf_pkg}"
     fi
     eval echo "${oprefix} Running \'${configcmd}\':" 2>&1 \| ${TEE} ${log}
     eval \( ${configcmd} 2>&1 \) 2>&1 \| ${TEE} ${log} \; retval=\${PIPESTATUS[0]}
@@ -1007,7 +1008,7 @@ function build_package {
   fi
 
   # Run make
-  local makecmd="env ${build_env} ${MAKE}"
+  local makecmd="env LLVM_COMPILER=clang LLVM_COMPILER_PATH=/data/ruizhe/llvm15/build/bin/ CC=wllvm CXX=wllvm++ ${build_env} ${MAKE}"
   eval echo "${oprefix} Running \'$makecmd\':" 2>&1 \| ${TEE} ${log}
   eval \( ${makecmd} 2>&1 \) 2>&1 \| ${TEE} ${log} \; retval=\${PIPESTATUS[0]}
   if [ "$retval" -ne "0" ]; then
@@ -1018,7 +1019,7 @@ function build_package {
 
   # Run make install
   ${MKDIR} ${pkginstdir} > /dev/null
-  local makecmd="env ${build_env} ${MAKE} install"
+  local makecmd="env LLVM_COMPILER=clang LLVM_COMPILER_PATH=/data/ruizhe/llvm15/build/bin/ CC=wllvm CXX=wllvm++ ${build_env} ${MAKE} install"
   eval echo "${oprefix} Running \'$makecmd\':" 2>&1 \| ${TEE} ${log}
   eval \( ${makecmd} 2>&1 \) 2>&1 \| ${TEE} ${log} \; retval=\${PIPESTATUS[0]}
   if [ "$retval" -ne "0" ]; then

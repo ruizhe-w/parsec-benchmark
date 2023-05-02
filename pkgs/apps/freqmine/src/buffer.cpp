@@ -101,8 +101,8 @@ char * memory::newbuf(unsigned int num,unsigned int size)
 //	get num times size bytes from the buffer (if possible) 
 //  RETURN: pointer to the first element
 { 
-	register unsigned int i;
-  	register int pos;
+	unsigned int i;
+  	int pos;
   	char *hlp;			// save current position in hlp 
 
 	size += (i=(size & L2BITS))? MULTOF - i : 0;     // size must be a multiple of MULTOF
@@ -174,7 +174,7 @@ char* memory::bufmark(unsigned int*MR, int* MC)		// set a mark in the buffer for
 void memory::freebuf(unsigned int MR, int MC, char* MB)	//clear the buffer above the mark 
 {	
 	int i;
-//	register char *pts;
+//	char *pts;
 //	for(i=markcount+1; i <= bufcount; i++) 
 int freesize = 0;
 	for(i=MC+1; i <= bufcount; i++) 
