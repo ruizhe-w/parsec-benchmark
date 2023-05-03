@@ -77,7 +77,7 @@ create_log="TRUE"
 oprefix="[PARSEC]"
 export CXXFLAGS="$CXXFLAGS -Xclang -no-opaque-pointers"
 export WLLVM_HOME="/usr/local/bin/"
-TARGET_CROSS="/app/llvm15/build/bin/"
+export TARGET_CROSS="/app/llvm15/build/bin/"
 
 
 
