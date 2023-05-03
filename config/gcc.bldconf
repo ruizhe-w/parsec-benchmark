@@ -26,10 +26,16 @@ if [ -z "$TARGET_CROSS" ]; then
 fi
 
 # Compilers and preprocessors
-export CC="${TARGET_CROSS}gcc"
-export CXX="${TARGET_CROSS}g++"
-export CPP="${TARGET_CROSS}cpp"
-export CXXCPP=""
+if [ -z "$WLLVM_HOME" ]; then
+  export CC="${TARGET_CROSS}clang"
+  export CXX="${TARGET_CROSS}clang++"
+  export CPP="${TARGET_CROSS}clang++"
+  export CXXCPP=""
+else
+  export CC="${WLLVM_HOME}wllvm"
+  export CXX="${WLLVM_HOME}wllvm++"
+  export CPP="${WLLVM_HOME}wllvm++"
+fi
 
 # GNU Binutils
 export LD="${TARGET_CROSS}ld"
