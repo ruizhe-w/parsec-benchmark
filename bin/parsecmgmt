@@ -76,8 +76,8 @@ create_log="TRUE"
 # Output prefix to use
 oprefix="[PARSEC]"
 export CXXFLAGS="$CXXFLAGS -Xclang -no-opaque-pointers"
-export WLLVM_HOME="/home/r53wang/.local/bin/"
-TARGET_CROSS="/data/ruizhe/llvm15/build/bin/"
+export WLLVM_HOME="/usr/local/bin/"
+TARGET_CROSS="/app/llvm15/build/bin/"
 
 
 
