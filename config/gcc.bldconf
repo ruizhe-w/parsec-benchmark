@@ -27,9 +27,9 @@ fi
 
 # Compilers and preprocessors
 if [ -z "$WLLVM_HOME" ]; then
-  export CC="${TARGET_CROSS}clang"
-  export CXX="${TARGET_CROSS}clang++"
-  export CPP="${TARGET_CROSS}clang++"
+  export CC="${LLVM_COMPILER_PATH}clang"
+  export CXX="${LLVM_COMPILER_PATH}clang++"
+  export CPP="${LLVM_COMPILER_PATH}clang++"
   export CXXCPP=""
 else
   export CC="${WLLVM_HOME}wllvm"
