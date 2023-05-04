@@ -29,12 +29,12 @@ fi
 if [ -z "$WLLVM_HOME" ]; then
   export CC="${LLVM_COMPILER_PATH}clang"
   export CXX="${LLVM_COMPILER_PATH}clang++"
-  export CPP="${LLVM_COMPILER_PATH}clang++"
+  export CPP="${LLVM_COMPILER_PATH}clang-cpp"
   export CXXCPP=""
 else
   export CC="${WLLVM_HOME}wllvm"
   export CXX="${WLLVM_HOME}wllvm++"
-  export CPP="${WLLVM_HOME}wllvm++"
+  export CPP="${LLVM_COMPILER_PATH}clang-cpp"
 fi
 
 # GNU Binutils
