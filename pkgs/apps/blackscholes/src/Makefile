@@ -19,7 +19,7 @@ ifdef version
     M4_SRC    = blackscholes.m4.cpp
     CSRC      = $(M4_SRC)
     MT        = -DENABLE_THREADS
-    CXXFLAGS += -pthread
+    CXXFLAGS += -lpthread
   endif
   ifeq "$(version)" "openmp"
     MT        = -DENABLE_OPENMP
