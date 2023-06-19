@@ -91,9 +91,9 @@ int cmcompress_compress_initialize(struct cmcompress_stream* cdata)
 
 static void cl_hash(struct cmcompress_stream* cdata, count_int hsize)    /* reset code table */
 {
-  register count_int *htab_p = cdata->htab+hsize;
-  register long i;
-  register long m1 = -1;
+  count_int *htab_p = cdata->htab+hsize;
+  long i;
+  long m1 = -1;
 
   i = hsize - 16;
   do
@@ -152,11 +152,11 @@ static int output(struct cmcompress_stream* cdata, code_int  code)
 #endif /* DEBUG */
 
   /*
-   * On the VAX, it is important to have the register declarations
+   * On the VAX, it is important to have the declarations
    * in exactly the order given, or the asm will break.
    */
-  register int r_off = cdata->offset, bits= cdata->n_bits;
-  register char * bp = buf;
+  int r_off = cdata->offset, bits= cdata->n_bits;
+  char * bp = buf;
 
 #ifdef DEBUG
   if ( verbose )
@@ -359,7 +359,7 @@ int cmcompress_compress_start(struct cmcompress_stream* cdata)
 
 static int cl_block (struct cmcompress_stream* cdata)    /* table clear for block compress */
 {
-  register long int rat;
+  long int rat;
 
   cdata->checkpoint = cdata->in_count + CHECK_GAP;
 #ifdef DEBUG
@@ -420,9 +420,9 @@ static int cl_block (struct cmcompress_stream* cdata)    /* table clear for bloc
 
 int cmcompress_compress(struct cmcompress_stream* cdata, void* buff, size_t n)
 {
-  register code_int i;
-  register int c;
-  register int disp;
+  code_int i;
+  int c;
+  int disp;
 
   unsigned char* input_buffer = (unsigned char*)buff;
 
@@ -530,7 +530,7 @@ int cmcompress_compress_finalize(struct cmcompress_stream* cdata)
 #if defined(DEBUG)
 static void prratio(FILE *stream, long int num, long int den)
 {
-  register int q;      /* Doesn't need to be long */
+  int q;      /* Doesn't need to be long */
 
   if(num > 214748L)
     {    /* 2147483647/10000 */

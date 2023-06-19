@@ -42,7 +42,7 @@ openbsd_basename(path)
   const char *path;
 {
   static char bname[TAR_MAXPATHLEN];
-  register const char *endp, *startp;
+  const char *endp, *startp;
 
   /* Empty or NULL string gets treated as "." */
   if (path == NULL || *path == '\0') {

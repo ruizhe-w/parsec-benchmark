@@ -237,7 +237,7 @@ char *openbsd_strdup(const char *);
 
 #if defined(NEED_STRMODE) && !defined(HAVE_STRMODE)
 
-void strmode(register mode_t, register char *);
+void strmode(mode_t, char *);
 
 #endif /* NEED_STRMODE && ! HAVE_STRMODE */
 
@@ -255,7 +255,7 @@ char *strrstr(char *, char *);
 #  define _LINUX_SOURCE_COMPAT    /* needed on AIX 4.3.3 */
 # else
 
-char *strsep(register char **, register const char *);
+char *strsep(char **, const char *);
 
 # endif
 

@@ -127,7 +127,7 @@ protected:
       just depend on the first one.  The check-build-system step must
       remove a dependee if the depender is missing to make sure both
       are regenerated properly.  This method is used by the local
-      makefile generators to register such pairs.  */
+      makefile generators to such pairs.  */
   void AddMultipleOutputPair(const char* depender, const char* dependee);
 
   /** Create a script to hold link rules and a command to invoke the

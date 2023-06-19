@@ -582,7 +582,7 @@ glob3(pathbuf, pathend, pattern, restpattern, pglob)
   Char *pathbuf, *pathend, *pattern, *restpattern;
   glob_t *pglob;
 {
-  register struct dirent *dp;
+  struct dirent *dp;
   DIR *dirp;
   int err;
   char buf[MAXPATHLEN];
@@ -617,8 +617,8 @@ glob3(pathbuf, pathend, pattern, restpattern, pglob)
   else
     readdirfunc = readdir;
   while ((dp = (*readdirfunc)(dirp))) {
-    register u_char *sc;
-    register Char *dc;
+    u_char *sc;
+    Char *dc;
 
     /* Initial DOT must be matched literally. */
     if (dp->d_name[0] == DOT && *pattern != DOT)
@@ -662,8 +662,8 @@ globextend(path, pglob)
   const Char *path;
   glob_t *pglob;
 {
-  register char **pathv;
-  register int i;
+  char **pathv;
+  int i;
   u_int newsize;
   char *copy;
   const Char *p;
@@ -703,7 +703,7 @@ globextend(path, pglob)
  */
 static int
 match(name, pat, patend)
-  register Char *name, *pat, *patend;
+  Char *name, *pat, *patend;
 {
   int ok, negate_range;
   Char c, k;
@@ -753,8 +753,8 @@ void
 openbsd_globfree(pglob)
   glob_t *pglob;
 {
-  register int i;
-  register char **pp;
+  int i;
+  char **pp;
 
   if (pglob->gl_pathv != NULL) {
     pp = pglob->gl_pathv + pglob->gl_offs;
@@ -767,7 +767,7 @@ openbsd_globfree(pglob)
 
 static DIR *
 g_opendir(str, pglob)
-  register Char *str;
+  Char *str;
   glob_t *pglob;
 {
   char buf[MAXPATHLEN];
@@ -785,7 +785,7 @@ g_opendir(str, pglob)
 
 static int
 g_lstat(fn, sb, pglob)
-  register Char *fn;
+  Char *fn;
   struct stat *sb;
   glob_t *pglob;
 {
@@ -799,7 +799,7 @@ g_lstat(fn, sb, pglob)
 
 static int
 g_stat(fn, sb, pglob)
-  register Char *fn;
+  Char *fn;
   struct stat *sb;
   glob_t *pglob;
 {
@@ -843,10 +843,10 @@ g_strcat(dst, src)
 
 static void
 g_Ctoc(str, buf)
-  register const Char *str;
+  const Char *str;
   char *buf;
 {
-  register char *dc;
+  char *dc;
 
   for (dc = buf; (*dc++ = *str++) != EOS;)
     continue;
@@ -856,9 +856,9 @@ g_Ctoc(str, buf)
 static void
 qprintf(str, s)
   const char *str;
-  register Char *s;
+  Char *s;
 {
-  register Char *p;
+  Char *p;
 
   (void)printf("%s:\n", str);
   for (p = s; *p; p++)

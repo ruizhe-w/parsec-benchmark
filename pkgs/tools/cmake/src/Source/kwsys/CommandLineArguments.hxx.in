@@ -38,7 +38,7 @@ struct CommandLineArgumentsCallbackStructure;
  * or set given variables.
  *
  * The two interfaces it knows are callback based and variable based. For
- * callback based, you have to register callback for particular argument using
+ * callback based, you have to callback for particular argument using
  * AddCallback method. When that argument is passed, the callback will be
  * called with argument, value, and call data. For boolean (NO_ARGUMENT)
  * arguments, the value is "1". If the callback returns 0 the argument parsing

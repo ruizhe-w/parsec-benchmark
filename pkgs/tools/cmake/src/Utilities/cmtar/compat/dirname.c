@@ -42,7 +42,7 @@ openbsd_dirname(path)
   const char *path;
 {
   static char bname[TAR_MAXPATHLEN];
-  register const char *endp;
+  const char *endp;
 
   /* Empty or NULL string gets treated as "." */
   if (path == NULL || *path == '\0') {

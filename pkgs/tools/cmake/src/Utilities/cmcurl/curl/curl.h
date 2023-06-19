@@ -393,7 +393,7 @@ typedef enum {
   CURLE_TFTP_EXISTS,             /* 73 - File already exists */
   CURLE_TFTP_NOSUCHUSER,         /* 74 - No such user */
   CURLE_CONV_FAILED,             /* 75 - conversion failed */
-  CURLE_CONV_REQD,               /* 76 - caller must register conversion
+  CURLE_CONV_REQD,               /* 76 - caller must conversion
                                     callbacks using curl_easy_setopt options
                                     CURLOPT_CONV_FROM_NETWORK_FUNCTION,
                                     CURLOPT_CONV_TO_NETWORK_FUNCTION, and

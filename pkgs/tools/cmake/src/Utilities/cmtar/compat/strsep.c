@@ -58,12 +58,12 @@ static char *rcsid = "$OpenBSD: strsep.c,v 1.3 1997/08/20 04:28:14 millert Exp $
  */
 char *
 strsep(stringp, delim)
-  register char **stringp;
-  register const char *delim;
+  char **stringp;
+  const char *delim;
 {
-  register char *s;
-  register const char *spanp;
-  register int c, sc;
+  char *s;
+  const char *spanp;
+  int c, sc;
   char *tok;
 
   if ((s = *stringp) == NULL)

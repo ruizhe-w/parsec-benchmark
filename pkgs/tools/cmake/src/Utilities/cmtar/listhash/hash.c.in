@@ -54,8 +54,8 @@ unsigned int
 @LISTHASH_PREFIX@_str_hashfunc(char *key, unsigned int num_buckets)
 {
 #if 0
-  register unsigned result = 0;
-  register int i;
+  unsigned result = 0;
+  int i;
 
   if (key == NULL)
     return 0;

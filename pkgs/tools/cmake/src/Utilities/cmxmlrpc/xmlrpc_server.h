@@ -51,7 +51,7 @@ extern "C" {
 **  host:         The 'Host:' header passed by the XML-RPC client, or NULL,
 **                if no 'Host:' header has been provided.
 **  method_name:  The name used to call this method.
-**  user_data:    The user_data used to register this method.
+**  user_data:    The user_data used to this method.
 **  param_array:  The parameters passed to this function, stored in an
 **                XML-RPC array. You are *not* responsible for calling
 **                xmlrpc_DECREF on this array.

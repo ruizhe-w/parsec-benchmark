@@ -658,8 +658,8 @@ void RegisterVisualStudioMacros(const std::string& macrosFile,
     int count = cmCallVisualStudioMacro::
       GetNumberOfRunningVisualStudioInstances("ALL");
 
-    // Only register the macros file if there are *no* instances of Visual
-    // Studio running. If we register it while one is running, first, it has
+    // Only the macros file if there are *no* instances of Visual
+    // Studio running. If we it while one is running, first, it has
     // no effect on the running instance; second, and worse, Visual Studio
     // removes our newly added registration entry when it quits. Instead,
     // emit a warning asking the user to exit all running Visual Studio
@@ -668,12 +668,12 @@ void RegisterVisualStudioMacros(const std::string& macrosFile,
     if (0 != count)
       {
       std::ostringstream oss;
-      oss << "Could not register CMake's Visual Studio macros file '"
+      oss << "Could not CMake's Visual Studio macros file '"
         << CMAKE_VSMACROS_FILENAME "' while Visual Studio is running."
         << " Please exit all running instances of Visual Studio before"
         << " continuing." << std::endl
         << std::endl
-        << "CMake needs to register Visual Studio macros when its macros"
+        << "CMake needs to Visual Studio macros when its macros"
         << " file is updated or when it detects that its current macros file"
         << " is no longer registered with Visual Studio."
         << std::endl;
@@ -682,7 +682,7 @@ void RegisterVisualStudioMacros(const std::string& macrosFile,
       // Count them again now that the warning is over. In the case of a GUI
       // warning, the user may have gone to close Visual Studio and then come
       // back to the CMake GUI and clicked ok on the above warning. If so,
-      // then register the macros *now* if the count is *now* 0...
+      // then the macros *now* if the count is *now* 0...
       //
       count = cmCallVisualStudioMacro::
         GetNumberOfRunningVisualStudioInstances("ALL");

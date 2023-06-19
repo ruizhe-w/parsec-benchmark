@@ -302,7 +302,7 @@ Curl_gtls_connect(struct connectdata *conn,
   gnutls_transport_set_ptr(session,
                            (gnutls_transport_ptr)conn->sock[sockindex]);
 
-  /* register callback functions to send and receive data. */
+  /* callback functions to send and receive data. */
   gnutls_transport_set_push_function(session, Curl_gtls_push);
   gnutls_transport_set_pull_function(session, Curl_gtls_pull);
 

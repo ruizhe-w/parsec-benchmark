@@ -131,7 +131,7 @@ void cmCPackGeneratorFactory::RegisterGenerator(const char* name,
   if ( !name || !createGenerator )
     {
     cmCPack_Log(this->Logger, cmCPackLog::LOG_ERROR,
-      "Cannot register generator" << std::endl);
+      "Cannot generator" << std::endl);
     return;
     }
   this->GeneratorCreators[name] = createGenerator;

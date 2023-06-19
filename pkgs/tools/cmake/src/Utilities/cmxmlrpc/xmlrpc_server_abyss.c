@@ -661,7 +661,7 @@ void
 xmlrpc_server_abyss_set_handlers(TServer *         const srvP,
                                  xmlrpc_registry * const registryP) {
 
-    /* Abyss ought to have a way to register with a handler an argument
+    /* Abyss ought to have a way to with a handler an argument
        that gets passed to the handler every time it is called.  That's
        where we should put the registry handle.  But we don't find such
        a thing in Abyss, so we use the global variable 'global_registryP'.

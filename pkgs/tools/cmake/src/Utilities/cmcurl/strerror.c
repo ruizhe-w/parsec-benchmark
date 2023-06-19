@@ -278,7 +278,7 @@ curl_easy_strerror(CURLcode error)
     return "conversion failed";
 
   case CURLE_CONV_REQD:
-    return "caller must register CURLOPT_CONV_ callback options";
+    return "caller must CURLOPT_CONV_ callback options";
 
   case CURLE_REMOTE_FILE_NOT_FOUND:
     return "Remote file not found";

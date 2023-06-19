@@ -559,13 +559,13 @@ long int out_count = 0;			/* # of codes output (for debugging) */
 
 compress()
 {
-    register long fcode;
-    register code_int i = 0;
-    register int c;
-    register code_int ent;
-    register int disp;
-    register code_int hsize_reg;
-    register int hshift;
+    long fcode;
+    code_int i = 0;
+    int c;
+    code_int ent;
+    int disp;
+    code_int hsize_reg;
+    int hshift;
 
 #ifndef COMPATIBLE
     if (nomagic == 0) {
@@ -701,11 +701,11 @@ code_int  code;
 #endif /* DEBUG */
 
     /*
-     * On the VAX, it is important to have the register declarations
+     * On the VAX, it is important to have the declarations
      * in exactly the order given, or the asm will break.
      */
-    register int r_off = offset, bits= n_bits;
-    register char * bp = buf;
+    int r_off = offset, bits= n_bits;
+    char * bp = buf;
 
 #ifdef DEBUG
 	if ( verbose )
@@ -827,9 +827,9 @@ code_int  code;
  */
 
 decompress() {
-    register char_type *stackp;
-    register int finchar;
-    register code_int code, oldcode, incode;
+    char_type *stackp;
+    int finchar;
+    code_int code, oldcode, incode;
     int    n, nwritten, offset;		/* Variables for buffered write */
     char buff[BUFSIZ];			/* Buffer for buffered write */
 
@@ -948,14 +948,14 @@ decompress() {
 code_int
 getcode() {
     /*
-     * On the VAX, it is important to have the register declarations
+     * On the VAX, it is important to have the declarations
      * in exactly the order given, or the asm will break.
      */
-    register code_int code;
+    code_int code;
     static int offset = 0, size = 0;
     static char_type buf[BITS];
-    register int r_off, bits;
-    register char_type *bp = buf;
+    int r_off, bits;
+    char_type *bp = buf;
 
     if ( clear_flg > 0 || offset >= size || free_ent > maxcode ) {
 	/*
@@ -1051,14 +1051,14 @@ code_int sorttab[1<<BITS];	/* sorted pointers into htab */
 
 dump_tab()	/* dump string table */
 {
-    register int i, first;
-    register ent;
+    int i, first;
+    ent;
 #define STACK_SIZE	15000
     int stack_top = STACK_SIZE;
-    register c;
+    c;
 
     if(do_decomp == 0) {	/* compressing */
-	register int flag = 1;
+	int flag = 1;
 
 	for(i=0; i<hsize; i++) {	/* build sort pointers */
 		if((long)htabof(i) >= 0) {
@@ -1107,7 +1107,7 @@ dump_tab()	/* dump string table */
 
 int
 in_stack(c, stack_top)
-	register c, stack_top;
+	c, stack_top;
 {
 	if ( (isascii(c) && isprint(c) && c != '\\') || c == ' ' ) {
 	    de_stack[--stack_top] = c;
@@ -1207,7 +1207,7 @@ oops ( )	/* wild pointer -- assume bad input */
 
 cl_block ()		/* table clear for block compress */
 {
-    register long int rat;
+    long int rat;
 
     checkpoint = in_count + CHECK_GAP;
 #ifdef DEBUG
@@ -1248,11 +1248,11 @@ cl_block ()		/* table clear for block compress */
 }
 
 cl_hash(hsize)		/* reset code table */
-	register count_int hsize;
+	count_int hsize;
 {
-	register count_int *htab_p = htab+hsize;
-	register long i;
-	register long m1 = -1;
+	count_int *htab_p = htab+hsize;
+	long i;
+	long m1 = -1;
 
 	i = hsize - 16;
  	do {				/* might use Sys V memset(3) here */
@@ -1282,7 +1282,7 @@ prratio(stream, num, den)
 FILE *stream;
 long int num, den;
 {
-	register int q;			/* Doesn't need to be long */
+	int q;			/* Doesn't need to be long */
 
 	if(num > 214748L) {		/* 2147483647/10000 */
 		q = num / (den / 10000L);

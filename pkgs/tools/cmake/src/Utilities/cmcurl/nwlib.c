@@ -109,7 +109,7 @@ int _NonAppStart( void        *NLMHandle,
   gLibId = register_library(DisposeLibraryData);
 
   if (gLibId < -1) {
-    OutputToScreen(errorScreen, "Unable to register library with kernel.\n");
+    OutputToScreen(errorScreen, "Unable to library with kernel.\n");
     return -1;
   }
 

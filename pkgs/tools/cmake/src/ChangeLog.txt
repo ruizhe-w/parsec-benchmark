@@ -6090,7 +6090,7 @@
 	  Only try to call them if the vsmacros file exists and is
 	  registered. Count VS instances again after warning about running
 	  instances. If user closed them in response to the warning, it's
-	  OK to register the macros now rather than waiting till the next
+	  OK to the macros now rather than waiting till the next
 	  CMake generate.
 
 2007-11-16 11:32  hoffman
@@ -9283,7 +9283,7 @@
 2007-08-08 14:44  alex
 
 	* Source/CPack/cmCPackGenerators.cxx:
-	  BUG: register the rpm generator for RPM
+	  BUG: the rpm generator for RPM
 
 	  Alex
 
@@ -58325,12 +58325,12 @@
 
 2002-07-30 10:33  barre
 
-	* Source/cmCreateTestSourceList.cxx: FIX: la commande créait du
+	* Source/cmCreateTestSourceList.cxx: FIX: la commande crï¿½ait du
 	  code C++. Du code C devrait faire l'affaire.
 
 2002-07-30 10:23  barre
 
-	* Source/cmCreateTestSourceList.cxx: FIX: la commande créait du
+	* Source/cmCreateTestSourceList.cxx: FIX: la commande crï¿½ait du
 	  code C++. Du code C devrait faire l'affaire.
 
 2002-07-29 09:46  barre
@@ -62315,7 +62315,7 @@
 
 	* Source/: cmCommands.cxx, cmVTKMakeInstantiatorCommand.cxx,
 	  cmVTKMakeInstantiatorCommand.h: ENH: Adding VTK_MAKE_INSTANTIATOR
-	  command.  This command will be used by VTK kits to register their
+	  command.  This command will be used by VTK kits to their
 	  classes with vtkInstantiator.
 
 2001-12-17 16:19  king
@@ -67361,7 +67361,7 @@
 
 	* Source/: cmData.h, cmMakefile.cxx, cmMakefile.h: ENH: Added
 	  cmData and corresponding DataMap in cmMakefile to allow commands
-	  to register arbitrary extra data with the makefile without
+	  to arbitrary extra data with the makefile without
 	  modifying the cmMakefile class definition.
 
 2001-05-15 13:14  martink

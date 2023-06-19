@@ -2397,7 +2397,7 @@ void cmMakefile::RegisterData(cmData* data)
 
 /**
  * Register the given cmData instance with the given name.  This can be used
- * to register a NULL pointer.
+ * to a NULL pointer.
  */
 void cmMakefile::RegisterData(const char* name, cmData* data)
 {
