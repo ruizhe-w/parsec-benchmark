@@ -75,8 +75,8 @@ create_log="TRUE"
 
 # Output prefix to use
 oprefix="[PARSEC]"
-export CXXFLAGS="$CXXFLAGS -Xclang -no-opaque-pointers"
-export CFLAGS="$CFLAGS -Xclang -no-opaque-pointers"
+export CXXFLAGS="$CXXFLAGS -Xclang -no-opaque-pointers -Xclang -mno-constructor-aliases"
+export CFLAGS="$CFLAGS -Xclang -no-opaque-pointers -Xclang -mno-constructor-aliases"
 export WLLVM_HOME="/usr/local/bin/"
 export LLVM_COMPILER_PATH="/app/llvm15/build/bin/"
 export LLVM_COMPILER="clang"
